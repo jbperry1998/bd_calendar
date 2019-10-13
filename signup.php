@@ -25,4 +25,6 @@ if(!$user) {
     $result_1 = pg_query($db_connection,$query_1);
 }
 
+header('Location: thankyou.html');
+
 ?>
