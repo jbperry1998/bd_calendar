@@ -23,10 +23,11 @@ $user = pg_fetch_assoc($result);
 if(!$user) {
     $query_1 = "INSERT INTO site_users VALUES('$first_name','$last_name','$email','$address','$city','$state','$zip','$username','$hashed_password')";
     $result_1 = pg_query($db_connection,$query_1);
+    header('Location: thankyou.html');
 }else{
     header('Location: user_exists.html');
 }
 
-header('Location: thankyou.html');
+
 
 ?>
