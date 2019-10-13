@@ -12,16 +12,16 @@ $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 $city = $_POST['city'];
 $zip = $_POST['zip'];
 $state = $_POST['state'];
-$firstname = $_POST['first name'];
-$lastname = $_POST['last name'];
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
 
-$query = "SELECT* FROM users WHERE username=$username OR email=$email";
+$query = "SELECT* FROM site_users WHERE username='$username' OR email='$email'";
 $result = pg_query($db_connection,$query);
 $user = pg_fetch_assoc($result);
 
 
 if(!$user) {
-    $query_1 = "INSERT INTO users VALUES('$firstname','$lastname','$email','$address','$city','$state','$zip','$username','$hashed_password')";
+    $query_1 = "INSERT INTO site_users VALUES('$first_name','$last_name','$email','$address','$city','$state','$zip','$username','$hashed_password')";
     $result_1 = pg_query($db_connection,$query_1);
 }
 
