@@ -4,11 +4,11 @@ session_start();
 $db_connection = pg_connect("host=ec2-174-129-227-80.compute-1.amazonaws.com
  port=5432 dbname=dbvs140f5cqkp1 user=zdlwovjrekrdar password=ea1a662a2d7df06996a35f5aee8b2ac1d852cbe10af9af3c5cc60b41ee0d21f5
 ");
-$email = $_POST['email'];
-$product = $_POST['product'];
-
 $_SESSION['email'] = $_POST['username'];
 $_SESSION['product'] = $_POST['password'];
+
+$email = $_SESSION['email'];
+$product = $_SESSION['product'];
 
 $query = "SELECT* FROM site_users WHERE email='$email'";
 $result = pg_query($db_connection,$query);
