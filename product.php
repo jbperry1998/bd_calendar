@@ -15,14 +15,14 @@ $user = pg_fetch_assoc($result);
 if($user) {
     //fill in location of bitwallet and do correct things based on state (product)
     if($product=='book'){
-        $query_1 = "IF EXISTS (SELECT * FROM sales WHERE email='$email')
-                       UPDATE sales SET CookBook = 1 WHERE email='$email'
+        $query_1 = "IF EXISTS (SELECT * FROM sales WHERE Email='$email')
+                       UPDATE sales SET CookBook = 1 WHERE Email='$email'
                        ELSE INSERT INTO sales VALUES ('$email',1,0)";
         pg_query($db_connection,$query_1);
         header('Location: index.html'); //change
     }else if($product=='subscription'){
-        $query_1 = "IF EXISTS (SELECT * FROM sales WHERE email='$email')
-                       UPDATE sales SET Subscription = 1 WHERE email='$email'
+        $query_1 = "IF EXISTS (SELECT * FROM sales WHERE Email='$email')
+                       UPDATE sales SET Subscription = 1 WHERE Email='$email'
                        ELSE INSERT INTO sales VALUES ('$email',0,1)";
         pg_query($db_connection,$query_1);
         header('Location: index.html'); //change
