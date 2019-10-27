@@ -8,7 +8,7 @@ $email = $_POST['email'];
 $subject = $_POST['subject'];
 $message1 = $_POST['message'];
 
-$message = $message1 . '\\r\\nFrom: ' . $name . '\\r\\nWith Email: ' . $email ;
+$message = $message1 . "\r\n" . 'From: ' . $name . "\r\n" . 'With Email: ' . $email ;
 
 $to      = 'hoocooks@gmail.com';
 $headers = 'From: hoocooks@gmail.com' . "\r\n" .
