@@ -14,7 +14,20 @@ $user = pg_fetch_assoc($result);
 
 if($user) {
     //fill in location of bitwallet and do correct things based on state (product)
-    header('Location: index.html');
+    if($product=='book'){
+        $query_1 = "UPDATE sales SET CookBook = 1 WHERE email='$email'";
+        pg_query($db_connection,$query_1);
+        header('Location: index.html');
+    }else if($product=='subscription'){
+        $query_1 = "UPDATE sales SET Subscription = 1 WHERE email='$email'";
+        pg_query($db_connection,$query_1);
+        header('Location: index.html');
+    }else{
+        //some sort of error for a non-existant product
+        header('Location: index.html');
+    }
+    
+    
 }else{
     header('Location: user_not_found.html');
 }
