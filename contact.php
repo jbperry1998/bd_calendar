@@ -76,4 +76,5 @@ $mail->SMTPAuth = true;
        /* PHP exception (note the backslash to select the global namespace Exception class). */
        echo $e->getMessage();
     }
+    header('Location: index.html');
 ?>
