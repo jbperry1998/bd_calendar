@@ -12,11 +12,11 @@ $result = pg_query($db_connection,$query);
 $user = pg_fetch_assoc($result);
 
 
-if(!$user) {
+if($user) {
     //fill in location of bitwallet and do correct things based on state (product)
-    header('Location: thankyou.html');
+    header('Location: index.html');
 }else{
-    header('Location: user_exists.html');
+    header('Location: user_not_found.html');
 }
 
 
