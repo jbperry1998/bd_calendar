@@ -22,7 +22,7 @@ if(strcmp( $product, "book" ) == 0){
      $result1 = pg_query($db_connection,$query_1);
      
      
-    header('Location: confirm_email.html'); //change
+    header('Location: confirm_email.php'); //change
 }else if(strcmp( $product, "subscription" ) == 0){
     if($in){
      $query_1 = "UPDATE sales SET Subscription = 1 WHERE Email='$email'";
@@ -32,7 +32,7 @@ if(strcmp( $product, "book" ) == 0){
      $result1 = pg_query($db_connection,$query_1);
      
      
-    header('Location: confirm_email.html'); //change
+    header('Location: confirm_email.php'); //change
 }else{
     //some sort of error for a non-existant product
     header('Location: index.html');
