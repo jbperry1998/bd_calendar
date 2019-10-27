@@ -13,22 +13,31 @@ $user = pg_fetch_assoc($result);
 
 
 if($user) {
+    $sales_query = "SELECT* FROM sales WHERE Email='$email'";
+    $result = pg_query($db_connection,$sales_query);
+    $in = pg_fetch_assoc($result);
     //fill in location of bitwallet and do correct things based on state (product)
+    
     if(strcmp( $product, "book" ) == 0){
-        $query_1 = "IF EXISTS (SELECT * FROM sales WHERE Email='$email')
-                       UPDATE sales SET CookBook = 1 WHERE Email='$email'
-                       ELSE INSERT INTO sales VALUES ('$email',1,0)";
-        pg_query($db_connection,$query_1);
+        if($in){
+            $query_1 = "UPDATE sales SET CookBook = 1 WHERE Email='$email'";
+        }else{
+            $query_1 = "INSERT INTO sales VALUES ('$email',1,0)";
+        }
+        $result1 = pg_query($db_connection,$query_1);
         header('Location: index.html'); //change
     }else if(strcmp( $product, "subscription" ) == 0){
-        $query_1 = "IF EXISTS (SELECT * FROM sales WHERE Email='$email')
-                       UPDATE sales SET Subscription = 1 WHERE Email='$email'
-                       ELSE INSERT INTO sales VALUES ('$email',0,1)";
+        if($in){
+            $query_1 = "UPDATE sales SET Subscription = 1 WHERE Email='$email'";
+        }else{
+            $query_1 = "INSERT INTO sales VALUES ('$email',0,1)";
+        }
         pg_query($db_connection,$query_1);
+        $result1 = pg_query($db_connection,$query_1);
         header('Location: index.html'); //change
     }else{
         //some sort of error for a non-existant product
-        header('Location: index.html');
+        header('Location: elements.html');
     }
     
     
