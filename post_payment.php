@@ -20,7 +20,9 @@ if(strcmp( $product, "book" ) == 0){
      $query_1 = "INSERT INTO sales VALUES ('$email',1,0)";
      }
      $result1 = pg_query($db_connection,$query_1);
-    header('Location: thankyou_purchase.html'); //change
+     
+     
+    header('Location: confirm_email.html'); //change
 }else if(strcmp( $product, "subscription" ) == 0){
     if($in){
      $query_1 = "UPDATE sales SET Subscription = 1 WHERE Email='$email'";
@@ -28,7 +30,9 @@ if(strcmp( $product, "book" ) == 0){
      $query_1 = "INSERT INTO sales VALUES ('$email',0,1)";
      }
      $result1 = pg_query($db_connection,$query_1);
-    header('Location: thankyou_purchase.html'); //change
+     
+     
+    header('Location: confirm_email.html'); //change
 }else{
     //some sort of error for a non-existant product
     header('Location: index.html');
