@@ -17,7 +17,7 @@ $login_status = $_Session['logged_in'];
 //$user = pg_fetch_assoc($result);
 
 
-if($login_status = 1) {
+if($login_status == 1) {
     
     $_SESSION['product'] = $_POST['product'];
     $product = $_SESSION['product'];
