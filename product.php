@@ -7,13 +7,10 @@ $db_connection = pg_connect("host=ec2-174-129-227-80.compute-1.amazonaws.com
 
 $login_status = $_SESSION['logged_in'];
 
-if($login_status == 1) {
+if(strcmp( $login_status, "logged_in" ) == 0) {
     
     $_SESSION['product'] = $_POST['product'];
     $product = $_SESSION['product'];
-    $sales_query = "SELECT* FROM sales WHERE Email='$email'";
-    $result = pg_query($db_connection,$sales_query);
-    $in = pg_fetch_assoc($result);
     
     if(strcmp( $product, "book" ) == 0){
         header('Location: cookbook.html');

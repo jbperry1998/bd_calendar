@@ -20,7 +20,7 @@ if($entries) {
     $username = $usernames[0];
     $_SESSION['username'] = $username;
     $_SESSION['email'] = $email;
-    $_SESSION['logged_in'] = 1;
+    $_SESSION['logged_in'] = "logged_in";
     
     header('Location: thankyou.html');
 }else{
