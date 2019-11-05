@@ -22,9 +22,10 @@ if($entries) {
     $_SESSION['email'] = $email;
     $_SESSION['logged_in'] = "logged_in";
     
+    //change to homepage for members
     header('Location: thankyou.html');
 }else{
-    header('Location: elements.html');
+    header('Location: bad_login.html');
 }
 
 
