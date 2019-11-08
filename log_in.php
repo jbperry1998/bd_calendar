@@ -11,19 +11,19 @@ $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 //password probably is incorrect column name
 $query = "SELECT username FROM site_users WHERE password='$hashed_password' AND email='$email'"; 
 $result = pg_query($db_connection,$query);
-$entries = pg_fetch_assoc($result);
+//$entries = pg_fetch_assoc($result);
 $usernames = pg_fetch_row($result);
+$username = $usernames[0];
 
-
-if($entries) {
+if($username) {
     
-    $username = $usernames[0];
+    
     $_SESSION['username'] = $username;
     $_SESSION['email'] = $email;
     $_SESSION['logged_in'] = "logged_in";
     
     //change to homepage for members
-    header('Location: thankyou.html');
+    header('Location: Member_Home_Page.php');
 }else{
     header('Location: bad_login.html');
 }

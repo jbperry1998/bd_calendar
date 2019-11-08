@@ -29,7 +29,7 @@ if(!$user) {
     $_SESSION['logged_in'] = "logged_in";
     
     //change to homepage for members
-    header('Location: thankyou.html');
+    header('Location: Member_Home_Page.php');
 }else{
     header('Location: user_exists.html');
 }
