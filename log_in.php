@@ -26,7 +26,8 @@ while ($row = pg_fetch_row($result)) {
         header('Location: Member_Home_Page.php');
     }else{
         echo $hp;
-        echo $row;
+        echo "\n";
+        echo $hashed_password;
         //header('Location: bad_login.html');
     }
 }
