@@ -14,7 +14,7 @@ $result = pg_query($db_connection,$query);
 $user = pg_fetch_assoc($result);
 
 
-if($user) {
+if(!(!($user))) {
     
     $_SESSION['username'] = "";
     $_SESSION['email'] = $email;
