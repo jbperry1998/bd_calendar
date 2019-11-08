@@ -25,7 +25,9 @@ while ($row = pg_fetch_row($result)) {
         //change to homepage for members
         header('Location: Member_Home_Page.php');
     }else{
-        header('Location: bad_login.html');
+        echo $hp;
+        echo $row;
+        //header('Location: bad_login.html');
     }
 }
 
