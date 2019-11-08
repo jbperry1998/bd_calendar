@@ -9,7 +9,7 @@ $password = $_POST['password'];
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 //password probably is incorrect column name
-$query = "SELECT username FROM site_users WHERE password='$hashed_password' AND email='$email'"; 
+$query = "SELECT * FROM site_users WHERE password='$hashed_password' AND email='$email'"; 
 $result = pg_query($db_connection,$query);
 $user = pg_fetch_assoc($result);
 
