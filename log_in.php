@@ -15,7 +15,7 @@ if (! $result) {
 
 $row = pg_fetch_row($result);
 $hp = $row[8];
-if (verify($password, $hp)) {
+if (password_verify($password, $hp)) {
     $_SESSION['username'] = "";
     $_SESSION['email'] = $email;
     $_SESSION['logged_in'] = "logged_in";
