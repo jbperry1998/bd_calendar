@@ -15,7 +15,7 @@ $entries = pg_fetch_assoc($result);
 //$usernames = pg_fetch_row($result);
 //$username = $usernames[0];
 
-if(!$entries) {
+if($entries) {
     
     
     $_SESSION['username'] = "";
