@@ -8,25 +8,40 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-//password probably is incorrect column name
-$query = "SELECT * FROM site_users WHERE password='$hashed_password' AND email='$email'"; 
+//password='$hashed_password' AND
+$query = "SELECT * FROM site_users WHERE email='$email'"; 
 $result = pg_query($db_connection,$query);
-$user = pg_fetch_assoc($result);
-
-
-if(!$user) {
-    
+if (!$result) {
     header('Location: bad_login.html');
-    
-}else{
-    
-    $_SESSION['username'] = "";
-    $_SESSION['email'] = $email;
-    $_SESSION['logged_in'] = "logged_in";
-    
-    //change to homepage for members
-    header('Location: Member_Home_Page.php');
 }
+
+while ($row = pg_fetch_row($result)) {
+    $hp = $row[8];
+    if(strcmp( $hp, $hashed_password ) == 0){
+        $_SESSION['username'] = "";
+        $_SESSION['email'] = $email;
+        $_SESSION['logged_in'] = "logged_in";
+        
+        //change to homepage for members
+        header('Location: Member_Home_Page.php');
+    }else{
+        header('Location: bad_login.html');
+    }
+}
+
+// if(!$user) {
+    
+//     header('Location: bad_login.html');
+    
+// }else{
+    
+//     $_SESSION['username'] = "";
+//     $_SESSION['email'] = $email;
+//     $_SESSION['logged_in'] = "logged_in";
+    
+//     //change to homepage for members
+//     header('Location: Member_Home_Page.php');
+// }
 
 
 
