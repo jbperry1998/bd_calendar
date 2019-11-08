@@ -11,14 +11,14 @@ $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 //password probably is incorrect column name
 $query = "SELECT username FROM site_users WHERE password='$hashed_password' AND email='$email'"; 
 $result = pg_query($db_connection,$query);
-//$entries = pg_fetch_assoc($result);
-$usernames = pg_fetch_row($result);
-$username = $usernames[0];
+$entries = pg_fetch_assoc($result);
+//$usernames = pg_fetch_row($result);
+//$username = $usernames[0];
 
-if($username) {
+if(!$entries) {
     
     
-    $_SESSION['username'] = $username;
+    $_SESSION['username'] = "";
     $_SESSION['email'] = $email;
     $_SESSION['logged_in'] = "logged_in";
     
