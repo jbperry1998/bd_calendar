@@ -28,7 +28,7 @@
 							<li><a href="generic.html">About Us</a></li>
 							<li><a href="contact.html">Contact Us</a></li>
 							<li><a href="product.html">Products</a></li>
-							<li><a href="logout.php" class="button">Log Out</a></li>
+							<li><a href="log_out.php" class="button">Log Out</a></li>
 						</ul>
 					</nav>
 				</header>
