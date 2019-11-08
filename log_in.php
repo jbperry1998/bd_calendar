@@ -14,7 +14,11 @@ $result = pg_query($db_connection,$query);
 $user = pg_fetch_assoc($result);
 
 
-if(!(!($user))) {
+if(!$user) {
+    
+    header('Location: bad_login.html');
+    
+}else{
     
     $_SESSION['username'] = "";
     $_SESSION['email'] = $email;
@@ -22,8 +26,6 @@ if(!(!($user))) {
     
     //change to homepage for members
     header('Location: Member_Home_Page.php');
-}else{
-    header('Location: bad_login.html');
 }
 
 
