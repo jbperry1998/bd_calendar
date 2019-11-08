@@ -37,7 +37,7 @@
 <!-- Banner -->
 				<section id="banner">
 					<header>
-						<h2>Edit This</h2>
+						<h2><marquee>Edit This</marquee></h2>
 						
 					</header>
 					<p>and this</p>
