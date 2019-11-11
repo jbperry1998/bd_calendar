@@ -16,9 +16,9 @@
         if(!strcmp( $login_status, "logged_in" ) == 0) {
             header('Location: elements.html');
 		} 
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$username = $_POST['username'];
+		$name = $_SESSION['name'];
+		$email = $_SESSION['email'];
+		$username = $_SESSION['username'];
 		?>
 	</head>
 	<body class="is-preload"> 
