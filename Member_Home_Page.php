@@ -80,14 +80,25 @@
 								<th>CookBook</th>
 								<th>Subscription</th>
 								</tr>";
-								while($row=pg_fetch_row($result)){
-								    $cb = strval($row[1]);
-								    $sub = strval($row[2]);
-									echo "<tr>";
-									echo "<td>" . $cb . "</td>";
-									echo "<td>" . $sub . "</td>";
-									echo "</tr>";
+								$has_purchased = pg_fetch_assoc($result);
+								if(!$has_purchased){
+								    $cb = "not purchased";
+								    $sub = "not purchased";
+								    echo "<tr>";
+								    echo "<td>" . $cb . "</td>";
+								    echo "<td>" . $sub . "</td>";
+								    echo "</tr>";
+								}else{
+								    while($row=pg_fetch_row($result)){
+								        $cb = strval($row[1]);
+								        $sub = strval($row[2]);
+								        echo "<tr>";
+								        echo "<td>" . $cb . "</td>";
+								        echo "<td>" . $sub . "</td>";
+								        echo "</tr>";
+								    }
 								}
+								
 								echo "</table>";
 								//pg_close($db_connection);
 								?>
