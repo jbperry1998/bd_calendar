@@ -89,8 +89,8 @@
 								    echo "</tr>";
 								}else{
 								    while($row=pg_fetch_row($result)){
-								        $cb = strval($row[1]);
-								        $sub = strval($row[2]);
+								        $cb = (strcmp( strval($row[1]), "0" ) == 0 ? "not purchased" : "purchased" );
+								        $sub = (strcmp( strval($row[2]), "0" ) == 0 ? "not purchased" : "purchased" );
 								        echo "<tr>";
 								        echo "<td>" . $cb . "</td>";
 								        echo "<td>" . $sub . "</td>";
