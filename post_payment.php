@@ -15,7 +15,7 @@ $in = pg_fetch_assoc($result);
 
 if(strcmp( $product, "book" ) == 0){
     if($in){
-     $query_1 = "UPDATE sales SET CookBook = 1 WHERE email='$email'";
+     $query_1 = "UPDATE sales SET cookbook = 1 WHERE email='$email'";
      }else{
      $query_1 = "INSERT INTO sales VALUES ('$email',1,0)";
      }
@@ -25,7 +25,7 @@ if(strcmp( $product, "book" ) == 0){
     header('Location: confirm_email.php'); //change
 }else if(strcmp( $product, "subscription" ) == 0){
     if($in){
-     $query_1 = "UPDATE sales SET Subscription = 1 WHERE email='$email'";
+     $query_1 = "UPDATE sales SET subscription = 1 WHERE email='$email'";
      }else{
      $query_1 = "INSERT INTO sales VALUES ('$email',0,1)";
      }
