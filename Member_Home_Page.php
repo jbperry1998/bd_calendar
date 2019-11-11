@@ -24,7 +24,7 @@
 		$result = pg_query($db_connection, $query);
 		//$username = $_SESSION['username'];
 		//$name = $_SESSION['name'];
-		
+
 
 		?>
 	</head>
@@ -69,7 +69,7 @@
 								<th>Email</th>
 								</tr>";
 								echo "<tr>";
-								echo "<td>" . $row[$_SESSION['email']] . "</td>";
+								echo "<td>" . $row[unserialize($_SESSION['email'])] . "</td>";
 								echo "</tr>";
 								?>
 							</p>
