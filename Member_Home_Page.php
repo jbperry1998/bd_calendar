@@ -22,6 +22,8 @@
 		
 		//$username = $_SESSION['username'];
 		//$name = $_SESSION['name'];
+
+
 		?>
 =======
 session_start();
@@ -81,7 +83,7 @@ $email = unserialize($_SESSION['email']);
 								</tr>";
 <<<<<<< HEAD
 								echo "<tr>";
-								echo "<td> . $email . </td>";
+								echo "<td>" . $email . "</td>";
 								echo "</tr>";
 								
 								$db_connection = pg_connect("host=ec2-174-129-227-80.compute-1.amazonaws.com
@@ -104,8 +106,8 @@ $email = unserialize($_SESSION['email']);
 <<<<<<< HEAD
 								while($row=pg_fetch_array($result)){
 									echo "<tr>";
-									echo "<td> . $row['CookBook'] . </td>";
-									echo "<td> . $row['Subscription'] . </td>";
+									echo "<td>" . $row['CookBook'] . "</td>";
+									echo "<td>" . $row['Subscription'] . "</td>";
 									echo "</tr>";
 								}
 								echo "</table>";
