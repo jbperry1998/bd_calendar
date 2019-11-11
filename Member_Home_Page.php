@@ -80,8 +80,7 @@
 								<th>CookBook</th>
 								<th>Subscription</th>
 								</tr>";
-								$has_purchased = pg_fetch_assoc($result);
-								if(!$has_purchased){
+								if(!$result){
 								    $cb = "not purchased";
 								    $sub = "not purchased";
 								    echo "<tr>";
