@@ -37,10 +37,9 @@
 <!-- Banner -->
 				<section id="banner">
 					<header>
-						<h2><marquee>Edit This</marquee></h2>
+						<h2>Welcome to HooCooks!</h2>
 						
 					</header>
-					<p>and this</p>
 				</section>
 
 			<!-- Main -->
@@ -49,35 +48,10 @@
 						<div class="col-12">
 
 							<!-- Text -->
-								<section class="box">
-									<h3>Why did we start HooCooks?</h3>
-									<p>We saw the need to teach college students 
-										not just how to cook, but how to budget,
-										 groceryshop, and create a balanced diet all on their own.</p>
-									<hr />	
-							
-									</section>
-								<section class="box">
-									<h4>James Perry (co-founder)</h4>
-									<blockquote>"We just wanted to show our peers that, like they say in Ratatouille, anyone can cook. Not only can anyone cook, but cooking for yourself can actually be a cheaper and healthier option than most people realize."</blockquote>
-								</section>
-								<section class="box">	
-									<header>
-										<h3>Where did we come from?</h3>
-									</header>
-									<p>The three of us met in an E-Commerce class where we worked on this project. We saw a need and decided to try and fill that need by creating a service for our peers. </p>
-									<hr />
-
-								</section>
-								<section class="box">
-									<h3><i> Not Your Average Meal Plan</i></h3>
-									<p>We wanted to give students a healthy and cheap alternative to the normal meal plans that are available to them and show them that when you are organized and knowledgible, cooking can be fun. </p>
-									<hr />
-								</section>
 							</div>
 							</div>
 							<a href="signup.html" class="button">Sign Up Now</a>
-							</section>
+				</section>
 							</div>
 
 	</body>
