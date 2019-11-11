@@ -15,7 +15,11 @@
         $login_status = $_SESSION['logged_in'];
         if(!strcmp( $login_status, "logged_in" ) == 0) {
             header('Location: elements.html');
-        } ?>
+		} 
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$username = $_POST['username'];
+		?>
 	</head>
 	<body class="is-preload"> 
 		<div id="page-wrapper">
@@ -48,11 +52,25 @@
 						<div class="col-12">
 
 							<!-- Text -->
-							</div>
-							</div>
-							<a href="signup.html" class="button">Sign Up Now</a>
+							<section class="box special">
+						<header class="major">
+							<h2>Account information </h2>
+							<p>
+								<?php
+								echo "<tr>";
+								echo "<td>" . $name . "</td>";
+								echo "<td>" . $username . "</td>";
+								echo "<td>" . $email . "</td>";
+								echo "</tr>";
+								?>
+							</p>
+							</header>
+					</section>
+								
+						</div>
+					</div>
 				</section>
-							</div>
+			</div>
 
 	</body>
 </html>
