@@ -60,13 +60,14 @@
 							<h2>Account information </h2>
 							<p>
 								<?php
-
+								session_start();
+								$email = $_SESSION['email'];
 								echo "<table border='1'>
 								<tr>
 								<th>Email</th>
 								</tr>";
 								echo "<tr>";
-								echo "<td>" . '$email' . "</td>";
+								echo "<td>" . $email . "</td>";
 								echo "</tr>";
 								
 								$db_connection = pg_connect("host=ec2-174-129-227-80.compute-1.amazonaws.com
@@ -83,8 +84,8 @@
 								    $cb = $row['CookBook'];
 								    $sub = $row['Subscription'];
 									echo "<tr>";
-									echo "<td>" . '$cb' . "</td>";
-									echo "<td>" . '$sub' . "</td>";
+									echo "<td>" . $cb . "</td>";
+									echo "<td>" . $sub . "</td>";
 									echo "</tr>";
 								}
 								echo "</table>";
