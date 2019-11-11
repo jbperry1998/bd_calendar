@@ -57,11 +57,18 @@
 							<h2>Account information </h2>
 							<p>
 								<?php
+								echo "<table border='1'>
+								<tr>
+								<th>Firstname</th>
+								<th>Lastname</th>
+								</tr>";
 								echo "<tr>";
-								echo "<td>" . $name . "</td>";
-								echo "<td>" . $username . "</td>";
-								echo "<td>" . $email . "</td>";
+								echo "<td>" . $row['FirstName'] . "</td>";
+								echo "<td>" . $row['Last Name'] . "</td>";
 								echo "</tr>";
+								echo "</table>";
+
+
 								?>
 							</p>
 							</header>
