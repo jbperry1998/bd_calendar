@@ -61,14 +61,13 @@
 								<tr>
 								<th>Firstname</th>
 								<th>Lastname</th>
+								<th>Email</th>
 								</tr>";
 								echo "<tr>";
-								echo "<td>" . $row['FirstName'] . "</td>";
-								echo "<td>" . $row['Last Name'] . "</td>";
+								echo "<td>" . $row['$name'] . "</td>";
+								echo "<td>" . $row['$username'] . "</td>";
+								echo "<td>" . $row['$email'] . "</td>";
 								echo "</tr>";
-								echo "</table>";
-
-
 								?>
 							</p>
 							</header>
