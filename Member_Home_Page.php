@@ -75,13 +75,12 @@
 								");
 								$query = "SELECT * FROM sales WHERE email='$email'";
 								$result = pg_query($db_connection, $query);
-								$user = pg_fetch_assoc($result);
 								echo "<table border='1'>
 								<tr>
 								<th>CookBook</th>
 								<th>Subscription</th>
 								</tr>";
-								if(!$user){
+								if(pg_num_rows ( $result ) == 0){
 								    $cb = "not purchased";
 								    $sub = "not purchased";
 								    echo "<tr>";
