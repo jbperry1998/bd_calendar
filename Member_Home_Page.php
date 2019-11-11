@@ -74,6 +74,7 @@
  								port=5432 dbname=dbvs140f5cqkp1 user=zdlwovjrekrdar password=ea1a662a2d7df06996a35f5aee8b2ac1d852cbe10af9af3c5cc60b41ee0d21f5
 								");
 								$query = "SELECT * FROM sales WHERE email='$email'";
+								$query = "SELECT * FROM site_users WHERE email='$email'";
 								$result = pg_query($db_connection, $query);
 								echo "<table border='1'>
 								<tr>
@@ -81,8 +82,8 @@
 								<th>Subscription</th>
 								</tr>";
 								while($row=pg_fetch_row($result)){
-								    $cb = $row[1];
-								    $sub = $row[2];
+								    $cb = strval($row[1]);
+								    $sub = strval($row[2]);
 									echo "<tr>";
 									echo "<td>" . $cb . "</td>";
 									echo "<td>" . $sub . "</td>";
