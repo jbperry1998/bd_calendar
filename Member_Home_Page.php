@@ -75,6 +75,7 @@
 								");
 								$query = "SELECT * FROM sales WHERE Email='$email'";
 								$result = pg_query($db_connection, $query);
+								echo strval($result);
 								echo "<table border='1'>
 								<tr>
 								<th>CookBook</th>
