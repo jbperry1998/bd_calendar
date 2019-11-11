@@ -109,7 +109,7 @@ $email = unserialize($_SESSION['email']);
 			</div>
 		</section>
 		<section id="cta">
-			<a href="unsub.php" class="button">Unsubscribe</a>
+			<a href="unsub.html" class="button">Unsubscribe</a>
 		</section>
 	</div>
 
