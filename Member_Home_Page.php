@@ -64,9 +64,9 @@
 								<th>Email</th>
 								</tr>";
 								echo "<tr>";
-								echo "<td>" . $row['$name'] . "</td>";
-								echo "<td>" . $row['$username'] . "</td>";
-								echo "<td>" . $row['$email'] . "</td>";
+								echo "<td>" . $row[$name] . "</td>";
+								echo "<td>" . $row[$username] . "</td>";
+								echo "<td>" . $row[$email] . "</td>";
 								echo "</tr>";
 								?>
 							</p>
