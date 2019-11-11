@@ -16,9 +16,16 @@
         if(!strcmp( $login_status, "logged_in" ) == 0) {
             header('Location: elements.html');
 		} 
-		//$name = $_SESSION['name'];
 		$email = $_SESSION['email'];
+		$db_connection = pg_connect("host=ec2-174-129-227-80.compute-1.amazonaws.com
+ 		port=5432 dbname=dbvs140f5cqkp1 user=zdlwovjrekrdar password=ea1a662a2d7df06996a35f5aee8b2ac1d852cbe10af9af3c5cc60b41ee0d21f5
+		");
+		$query = "SELECT * FROM site_users WHERE email='$email'";
+		$result = pg_query($db_connection, $query);
 		//$username = $_SESSION['username'];
+		//$name = $_SESSION['name'];
+		
+
 		?>
 	</head>
 	<body class="is-preload"> 
@@ -62,7 +69,7 @@
 								<th>Email</th>
 								</tr>";
 								echo "<tr>";
-								echo "<td>" . $row[$email] . "</td>";
+								echo "<td>" . $row[$_SESSION['email']] . "</td>";
 								echo "</tr>";
 								?>
 							</p>
