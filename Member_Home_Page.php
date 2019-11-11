@@ -12,32 +12,15 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
 		<?php
-<<<<<<< HEAD
-        session_start();
-        $login_status = $_SESSION['logged_in'];
-        if(!strcmp( $login_status, "logged_in" ) == 0) {
-            header('Location: elements.html');
-		} 
-		$email = unserialize($_SESSION['email']);
-		
-		//$username = $_SESSION['username'];
-		//$name = $_SESSION['name'];
-
-
-		?>
-=======
 session_start();
 $login_status = $_SESSION['logged_in'];
 if (! strcmp($login_status, "logged_in") == 0) {
     header('Location: elements.html');
 }
 $email = unserialize($_SESSION['email']);
-
 // $username = $_SESSION['username'];
 // $name = $_SESSION['name'];
-
 ?>
->>>>>>> feb8ef39f58834180a1cf6947b27651a1bbc20af
 	</head>
 <body class="is-preload">
 	<div id="page-wrapper">
@@ -81,19 +64,10 @@ $email = unserialize($_SESSION['email']);
 								<tr>
 								<th>Email</th>
 								</tr>";
-<<<<<<< HEAD
-								echo "<tr>";
-								echo "<td>" . $email . "</td>";
-								echo "</tr>";
-								
-								$db_connection = pg_connect("host=ec2-174-129-227-80.compute-1.amazonaws.com
-=======
         echo "<tr>";
         echo "<td>" . $email . "</td>";
         echo "</tr>";
-
         $db_connection = pg_connect("host=ec2-174-129-227-80.compute-1.amazonaws.com
->>>>>>> feb8ef39f58834180a1cf6947b27651a1bbc20af
  								port=5432 dbname=dbvs140f5cqkp1 user=zdlwovjrekrdar password=ea1a662a2d7df06996a35f5aee8b2ac1d852cbe10af9af3c5cc60b41ee0d21f5
 								");
         $query = "SELECT * FROM sales WHERE email='$email'";
@@ -103,17 +77,6 @@ $email = unserialize($_SESSION['email']);
 								<th>CookBook</th>
 								<th>Subscription</th>
 								</tr>";
-<<<<<<< HEAD
-								while($row=pg_fetch_array($result)){
-									echo "<tr>";
-									echo "<td>" . $row['CookBook'] . "</td>";
-									echo "<td>" . $row['Subscription'] . "</td>";
-									echo "</tr>";
-								}
-								echo "</table>";
-								//pg_close($db_connection);
-								?>
-=======
         if (pg_num_rows($result) == 0) {
             $cb = "not purchased";
             $sub = "not purchased";
@@ -131,11 +94,9 @@ $email = unserialize($_SESSION['email']);
                 echo "</tr>";
             }
         }
-
         echo "</table>";
         // pg_close($db_connection);
         ?>
->>>>>>> feb8ef39f58834180a1cf6947b27651a1bbc20af
 							</p>
 						</header>
 					</section>
