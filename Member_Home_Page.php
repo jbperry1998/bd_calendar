@@ -16,9 +16,9 @@
         if(!strcmp( $login_status, "logged_in" ) == 0) {
             header('Location: elements.html');
 		} 
-		$name = $_SESSION['name'];
+		//$name = $_SESSION['name'];
 		$email = $_SESSION['email'];
-		$username = $_SESSION['username'];
+		//$username = $_SESSION['username'];
 		?>
 	</head>
 	<body class="is-preload"> 
@@ -59,13 +59,9 @@
 								<?php
 								echo "<table border='1'>
 								<tr>
-								<th>First Name</th>
-								<th>Last Name</th>
 								<th>Email</th>
 								</tr>";
 								echo "<tr>";
-								echo "<td>" . $row[$name] . "</td>";
-								echo "<td>" . $row[$username] . "</td>";
 								echo "<td>" . $row[$email] . "</td>";
 								echo "</tr>";
 								?>
