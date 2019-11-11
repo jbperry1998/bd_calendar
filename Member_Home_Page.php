@@ -16,12 +16,8 @@
         if(!strcmp( $login_status, "logged_in" ) == 0) {
             header('Location: elements.html');
 		} 
-		$email = $_SESSION['email'];
-		$db_connection = pg_connect("host=ec2-174-129-227-80.compute-1.amazonaws.com
- 		port=5432 dbname=dbvs140f5cqkp1 user=zdlwovjrekrdar password=ea1a662a2d7df06996a35f5aee8b2ac1d852cbe10af9af3c5cc60b41ee0d21f5
-		");
-		$query = "SELECT * FROM site_users WHERE email='$email'";
-		$result = pg_query($db_connection, $query);
+		$email = unserialize($_SESSION['email']);
+		
 		//$username = $_SESSION['username'];
 		//$name = $_SESSION['name'];
 
@@ -64,13 +60,35 @@
 							<h2>Account information </h2>
 							<p>
 								<?php
+
 								echo "<table border='1'>
 								<tr>
 								<th>Email</th>
 								</tr>";
 								echo "<tr>";
-								echo "<td>" . $row[unserialize($_SESSION['email'])] . "</td>";
+								echo "<td>" . $row[$email] . "</td>";
 								echo "</tr>";
+								
+								$db_connection = pg_connect("host=ec2-174-129-227-80.compute-1.amazonaws.com
+ 								port=5432 dbname=dbvs140f5cqkp1 user=zdlwovjrekrdar password=ea1a662a2d7df06996a35f5aee8b2ac1d852cbe10af9af3c5cc60b41ee0d21f5
+								");
+								$query = "SELECT * FROM site_users WHERE email='$email'";
+								$result = pg_query($db_connection, $query);
+								echo "<table border='1'>
+								<tr>
+								<th>Username</th>
+								<th>Email</th>
+								<th>City</th>
+								</tr>";
+								while($row=pg_fetch_array($result)){
+									echo "<tr>";
+									echo "<td>" . $row['username'] . "</td>";
+									echo "<td>" . $row['email'] . "</td>";
+									echo "<td>" . $row['city'] . "</td>";
+									echo "</tr>";
+								}
+								echo "</table>";
+								//pg_close($db_connection);
 								?>
 							</p>
 							</header>
