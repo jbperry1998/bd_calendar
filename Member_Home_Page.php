@@ -80,9 +80,9 @@
 								<th>CookBook</th>
 								<th>Subscription</th>
 								</tr>";
-								while($row=pg_fetch_array($result)){
-								    $cb = $row['CookBook'];
-								    $sub = $row['Subscription'];
+								while($row=pg_fetch_row($result)){
+								    $cb = $row[1];
+								    $sub = $row[2];
 									echo "<tr>";
 									echo "<td>" . $cb . "</td>";
 									echo "<td>" . $sub . "</td>";
