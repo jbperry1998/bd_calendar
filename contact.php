@@ -1,5 +1,5 @@
 <?php
-
+ini_set('display_errors', 'On');
 $send_email = 'hoocooks@gmail.com';
 //$send_password = '@Hoocooks19';
 
