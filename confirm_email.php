@@ -15,7 +15,7 @@ $message = "Thank You for purchasing " . $product ;
     use PHPMailer\PHPMailer\SMTP;
     
     /* Include the Composer generated autoload.php file. */
-    require 'C:\XAMP\composer\vendor\autoload.php';
+    require 'vendor/autoload.php';
     
     /* Create a new PHPMailer object. Passing TRUE to the constructor enables exceptions. */
     $mail = new PHPMailer(TRUE);
