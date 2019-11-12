@@ -19,7 +19,7 @@ $headers = 'From: hoocooks@gmail.com' . "\r\n" .
     use PHPMailer\PHPMailer\SMTP;
     
     /* Include the Composer generated autoload.php file. */
-    require '~\vendor\autoload.php';
+    require '\vendor\autoload.php';
     
     /* Create a new PHPMailer object. Passing TRUE to the constructor enables exceptions. */
     $mail = new PHPMailer(TRUE);
